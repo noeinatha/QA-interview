@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.6 on win32)" generated="2024-03-15T23:42:25.465458" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCase4" source="c:\Users\DELL\Documents\TestProject\Tests\TestCase4.robot">
+<test id="s1-t1" name="Get Text from URL and Compare" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-15T23:42:25.749610" level="INFO">Opening browser 'chrome' to base url 'https://nocnoc.com/pl/All'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-15T23:42:25.749610" elapsed="2.426718"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://div[@class='sort-section-container']//p[@class='product-count-desc-desktop tw-typography-caption-4']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-15T23:42:28.177322" elapsed="2.005931"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-03-15T23:42:30.212250" level="INFO">${actual_text} = แสดงสินค้า 1-48 จาก 565253</msg>
+<var>${actual_text}</var>
+<arg>xpath://div[@class='sort-section-container']//p[@class='product-count-desc-desktop tw-typography-caption-4']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-15T23:42:30.184253" elapsed="0.029002"/>
+</kw>
+<kw name="Get Regexp Matches" owner="String">
+<msg time="2024-03-15T23:42:30.215251" level="INFO">${variable} = []</msg>
+<var>${variable}</var>
+<arg>${actual_text}</arg>
+<arg>${Expected_Text}</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<status status="PASS" start="2024-03-15T23:42:30.214251" elapsed="0.002001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-15T23:42:30.217250" level="INFO">[]</msg>
+<arg>${variable}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-15T23:42:30.216252" elapsed="0.001999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-15T23:42:30.219250" elapsed="2.244949"/>
+</kw>
+<status status="PASS" start="2024-03-15T23:42:25.747608" elapsed="6.717591"/>
+</test>
+<status status="PASS" start="2024-03-15T23:42:25.471457" elapsed="6.994742"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCase4">TestCase4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
